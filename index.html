@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Buon Compleanno ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 40px;
+      color: #4a2c2a;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.4em;
+      max-width: 700px;
+      margin: auto;
+    }
+    .cuore {
+      font-size: 2em;
+      animation: battito 1s infinite;
+    }
+    @keyframes battito {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* DECORAZIONI FIORI */
+    .decorazioni {
+      position: fixed;
+      top: 50%;
+      width: 100%;
+      pointer-events: none;
+    }
+    .sinistra, .destra {
+      position: absolute;
+      font-size: 3em;
+      opacity: 0.8;
+    }
+    .sinistra { left: 20px; }
+    .destra { right: 20px; }
+
+    /* LUNE CHE FLUTTUANO */
+    .lune {
+      margin-top: 40px;
+      font-size: 2em;
+      animation: fluttuare 4s ease-in-out infinite;
+    }
+    @keyframes fluttuare {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* PULSANTE MUSICA */
+    #playSong {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin-top: 30px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6f91;
+      color: white;
+    }
+    #playSong:hover {
+      background-color: #ff4f70;
+    }
+
+    #videoPlayer { margin-top:20px; border-radius:10px; }
+
+  </style>
+</head>
+<body>
+
+  <!-- FIORI LATERALI -->
+  <div class="decorazioni">
+    <div class="sinistra">🌸🌷🌺</div>
+    <div class="destra">🌺🌷🌸</div>
+  </div>
+
+  <!-- TESTO CENTRALE -->
+  <h1>Buon Compleanno Mamma❤️</h1>
+  <p>
+   Cara Mamma tanti auguri!
+   Purtroppo non sono con te in questo momento, 
+   ma col tuo supporto mi sento sempre vicino e connesso a te.
+    
+    
+  </p>
+  <p class="cuore">❤️ ❤️ ❤️</p>
+
+  <!-- LUNE CHE FLUTTUANO -->
+  <p class="lune">🌙 ✨ 🌙 ✨ 🌙</p>
+
+  <!-- PULSANTE PER LA CANZONE -->
+  <button id="playSong">🎵 Ascolta la canzone  </button>
+
+  <!-- IFRAME YOUTUBE NASCOSTO -->
+   <iframe id="videoPlayer" width="200" height="113"
+      src="https://www.youtube.com/embed/fUnOZt_A4MY?playlist=fUnOZt_A4MY"
+      frameborder="0"
+      allow="autoplay"
+      style="display:none;">
+  </iframe>
+
+
+  <!-- SCRIPT PULSANTE -->
+  <script>
+    document.getElementById('playSong').addEventListener('click', function() {
+        var iframe = document.getElementById('videoPlayer');
+        iframe.style.display = 'block'; // ora il video appare piccolo
+        iframe.src = "https://www.youtube.com/embed/fUnOZt_A4MY?autoplay=1&playlist=fUnOZt_A4MY";
+        this.style.display = 'none'; // nasconde il pulsante
+    });
+  </script>
+  
+
+
+</body>
+</html>
